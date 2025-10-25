@@ -21,7 +21,7 @@ class Puesto extends Model
     /**
      * RELACIÓN: Un puesto tiene muchos empleados
      *
-     * Esto te permite hacer:
+     * Esto permite hacer:
      * $puesto->empleados → Obtiene todos los empleados con este puesto
      */
     public function empleados()

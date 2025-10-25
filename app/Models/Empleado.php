@@ -35,7 +35,7 @@ class Empleado extends Model
     /**
      * RELACIÓN: Un empleado pertenece a un departamento
      *
-     * Esto te permite hacer:
+     * Esto permite hacer:
      * $empleado->departamento → Obtiene el departamento del empleado
      */
     public function departamento()
@@ -46,7 +46,7 @@ class Empleado extends Model
     /**
      * RELACIÓN: Un empleado pertenece a un puesto
      *
-     * Esto te permite hacer:
+     * Esto permite hacer:
      * $empleado->puesto → Obtiene el puesto del empleado
      */
     public function puesto()
@@ -57,7 +57,7 @@ class Empleado extends Model
     /**
      * RELACIÓN MUCHOS A MUCHOS: Un empleado puede estar en varios proyectos
      *
-     * Esto te permite hacer:
+     * Esto permite hacer:
      * $empleado->proyectos → Obtiene todos los proyectos del empleado
      * $empleado->proyectos()->attach($proyectoId) → Asignar empleado a proyecto
      * $empleado->proyectos()->detach($proyectoId) → Quitar empleado de proyecto

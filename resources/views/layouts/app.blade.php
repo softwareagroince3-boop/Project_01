@@ -13,7 +13,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <h1>📊 Sistema RH</h1>
+                    <h1>📊 Sistema</h1>
                 </div>
                 <nav class="nav">
                     <a href="{{ route('empleados.index') }}" class="nav-link {{ request()->routeIs('empleados.*') ? 'active' : '' }}">

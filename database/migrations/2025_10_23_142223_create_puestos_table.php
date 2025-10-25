@@ -7,21 +7,21 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Correr migrations.
      */
     public function up(): void
     {
         Schema::create('puestos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre'); // Nombre del puesto (ej: "Desarrollador Senior")
-            $table->text('descripcion')->nullable(); // Descripción del puesto
-            $table->decimal('salario_base', 10, 2); // Salario (10 dígitos totales, 2 decimales)
+            $table->string('nombre'); // Nombre del puesto 
+            $table->text('descripcion')->nullable(); // Descripción del puesto - Opcional
+            $table->decimal('salario_base', 10, 2); // Salario (10 dígitos totales MAX, 2 decimales)
             $table->timestamps();
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Eliminar las migrations.
      */
     public function down(): void
     {

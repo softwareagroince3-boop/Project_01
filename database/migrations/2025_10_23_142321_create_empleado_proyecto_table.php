@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Correr migrations.
      */
     public function up(): void
     {
@@ -23,13 +23,13 @@ return new class extends Migration
                   ->constrained('proyectos') // Se relaciona con 'proyectos'
                   ->onDelete('cascade');
 
-            $table->string('rol')->nullable(); // Rol del empleado en el proyecto (ej: "Líder", "Desarrollador") - Opcional
+            $table->string('rol')->nullable(); // Rol del empleado en el proyecto - Opcional
             $table->timestamps();
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Eliminar las migrations.
      */
     public function down(): void
     {

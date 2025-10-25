@@ -94,12 +94,6 @@ class DepartamentoController extends Controller
      */
     public function destroy(Departamento $departamento)
     {
-        // Verificar si tiene empleados asignados
-        if ($departamento->empleados()->count() > 0) {
-            return redirect()->route('departamentos.index')
-                ->with('error', 'No se puede eliminar un departamento con empleados asignados.');
-        }
-
         $departamento->delete();
 
         return redirect()->route('departamentos.index')

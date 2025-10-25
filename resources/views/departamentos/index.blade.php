@@ -33,6 +33,14 @@
                         <a href="{{ route('departamentos.edit', $departamento) }}" class="btn btn-primary btn-sm">
                             ✏️ Editar
                         </a>
+                        <form action="{{ route('departamentos.destroy', $departamento) }}" method="POST"
+                              onsubmit="return confirm('¿Está seguro de eliminar este departamento?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                🗑️ Eliminar
+                            </button>
+                        </form>
                     </div>
                 </div>
             @endforeach

@@ -32,7 +32,7 @@ class Proyecto extends Model
     /**
      * RELACIÓN MUCHOS A MUCHOS: Un proyecto puede tener varios empleados
      *
-     * Esto te permite hacer:
+     * Esto permite hacer:
      * $proyecto->empleados → Obtiene todos los empleados del proyecto
      * $proyecto->empleados()->attach($empleadoId) → Asignar empleado al proyecto
      * $proyecto->empleados()->detach($empleadoId) → Quitar empleado del proyecto

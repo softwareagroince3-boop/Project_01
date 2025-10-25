@@ -45,6 +45,17 @@ class ProyectoController extends Controller
 
         // Separar empleados
         $empleados = $validated['empleados'] ?? [];
+        
+        // Validar que el presupuesto sea suficiente para el costo del equipo
+        if (!empty($empleados) && isset($validated['presupuesto'])) {
+            $costoTotal = Empleado::whereIn('id', $empleados)->sum('salario');
+            if ($validated['presupuesto'] < $costoTotal) {
+                return redirect()->back()
+                    ->withInput()
+                    ->withErrors(['presupuesto' => 'El presupuesto ($' . number_format($validated['presupuesto'], 2) . ') no puede ser menor al costo total del equipo ($' . number_format($costoTotal, 2) . ').']);
+            }
+        }
+        
         unset($validated['empleados']);
 
         // Crear el proyecto
@@ -98,6 +109,17 @@ class ProyectoController extends Controller
 
         // Separar empleados
         $empleados = $validated['empleados'] ?? [];
+        
+        // Validar que el presupuesto sea suficiente para el costo del equipo
+        if (!empty($empleados) && isset($validated['presupuesto'])) {
+            $costoTotal = Empleado::whereIn('id', $empleados)->sum('salario');
+            if ($validated['presupuesto'] < $costoTotal) {
+                return redirect()->back()
+                    ->withInput()
+                    ->withErrors(['presupuesto' => 'El presupuesto ($' . number_format($validated['presupuesto'], 2) . ') no puede ser menor al costo total del equipo ($' . number_format($costoTotal, 2) . ').']);
+            }
+        }
+        
         unset($validated['empleados']);
 
         // Actualizar proyecto
